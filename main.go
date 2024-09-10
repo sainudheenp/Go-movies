@@ -40,7 +40,7 @@ func deleteMovie(w http.ResponseWriter , r *http.Request){
 func getMovie(w http.ResponseWriter , r *http.Request){
 	w.Header().Set("Content-Type","application/json")
 	params := mux.Vars(r)
-for _,item  := renge movies{
+for _ ,item  := renge movies{
 	if item.ID == params["id"]
 }
 
