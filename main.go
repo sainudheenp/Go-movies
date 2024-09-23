@@ -53,7 +53,8 @@ for _,item:= range movies{
 func createMovie(w http.ResponseWriter,r *http.Request){
 w.Header().Set("Content-Type","application/json")
 var movie Movie 
-_ =json.
+_ =json.NewDecoder(r.Body).Decode(&movie)
+movie.ID
 }
 
 
