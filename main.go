@@ -31,7 +31,7 @@ func getMovies(w http.ResponseWriter, r *http.Request) {
 
 func deleteMovie(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	params := mux.vars(r)
+	params := mux.Vars(r)
 	for index, item := range movies {
 		if item.ID == params["id"] {
 			movies = append(movies[:index], movies[index+1:]...)
@@ -83,7 +83,7 @@ func updateMovie(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func mian() {
+func main() {
 	r := mux.NewRouter()
 
 	movies = append(movies, Movie{ID: "1", Lsbn: "3232", Title: "WE", Director: &Director{Firstname: "john", Lastname: "Doe"}})
